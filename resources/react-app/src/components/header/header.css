@@ -1,6 +1,18 @@
 .navbar-full{
-    background-color: white;
+    font-weight: 500;
+    font-size: 14px;
+    font-style: normal;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 7%);
+    left: 0px;
+    top: 0px;
 }
-.navbar-links{
-    background-color: white;
+.navbar-link{
+font-family: 'Josefin Sans';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 14px;
+/* identical to box height */
+color: #191919;
 }
