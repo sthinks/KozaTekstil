@@ -1,14 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
 import { BrowserRouter } from 'react-router-dom'
+import Header from './components/header/Header';
 import Rotate from './routing/Rotate'
 function App() {
-    return ( <>
-    <div className="App">
+  return (<>
     <BrowserRouter>
       <Rotate />
     </BrowserRouter>
-    </div></>
+  </>
   );
 }
 
