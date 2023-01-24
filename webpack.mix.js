@@ -31,10 +31,10 @@ mix.webpackConfig({
   },
 }).react();
 //tailwind
-mix.js("resources/js/app.js", "public/js")
-    .postCss("resources/css/app.css", "public/css", [
-        require("tailwindcss"),
-    ]);
+// mix.js("resources/js/app.js", "public/js")
+//     .postCss("resources/css/app.css", "public/css", [
+//         require("tailwindcss"),
+//     ]);
 //tailwind
 
 // used to run app using reactjs
