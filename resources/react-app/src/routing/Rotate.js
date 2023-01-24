@@ -8,7 +8,7 @@ function Rotate() {
     <>
     <Header/>
     <Routes>
-        <Route path="/sustainability" element={<Sustainability />} />
+        <Route path="/s" element={<Sustainability />} />
     </Routes>
     </>
   )
