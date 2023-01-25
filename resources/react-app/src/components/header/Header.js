@@ -4,7 +4,6 @@ import "../header/header.css";
 export default function header() {
     return (
         <>
-
             <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 navbar-full">
                 <div class="container flex flex-wrap items-center justify-between mx-auto">
                     <a
