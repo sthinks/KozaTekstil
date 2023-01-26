@@ -1,18 +1,15 @@
-import React from "react";
-import BannerImage from "../assets/sustainability/AdobeStock_208709202 1.png";
+import React from 'react'
+import BannerImage from '../assets/sustainability/AdobeStock_208709202 1.png'
 function Sustainability() {
-    return (
-        <>
-            <div class="">
-                <div class="container banner">
-                    <img
-                        src={BannerImage}
-                        class=""
-                    />
-                </div>
-            </div>
-        </>
-    );
+  return (
+    <>
+      <div className="">
+        <div className="container banner">
+          <img src={BannerImage} className="" alt="" />
+        </div>
+      </div>
+    </>
+  )
 }
 
-export default Sustainability;
+export default Sustainability

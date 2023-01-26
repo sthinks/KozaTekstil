@@ -1,54 +1,50 @@
-import React from "react";
-import "../header/header.css";
-import LogoKoza from "../../assets/header/KozaTekstil.png";
+import React from 'react'
+import LogoKoza from '../../assets/header/KozaTekstil.png'
+import { Link } from 'react-router-dom'
 export default function Header() {
-    return (
-        <>
-            <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 navbar-full">
-                <div class="container flex flex-wrap items-center justify-between mx-auto">
-                    <a
-                        href="#"
-                        class="navbar-link block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
-                        aria-current="page"
-                    >
-                        About ss
-                    </a>
-                    <a
-                        href="#"
-                        class="navbar-link  block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
-                        aria-current="page"
-                    >
-                        Products
-                    </a>
-                    <a
-                        href=" navbar-link"
-                        class="flex items-center"
-                    >
-                        <img
-                            src={LogoKoza}
-                            class="h-6 mr-3 sm:h-9"
-                            alt="Flowbite Logo"
-                        />
-                        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-                            KozaTekstil
-                        </span>
-                    </a>
-                    <a
-                        href="#"
-                        class="navbar-link  block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
-                        aria-current="page"
-                    >
-                        Sustainability
-                    </a>
-                    <a
-                        href="#"
-                        class="navbar-link  block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
-                        aria-current="page"
-                    >
-                        Contact
-                    </a>
-                </div>
-            </nav>
-        </>
-    );
+  return (
+    <>
+      <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded  navbar-full font-semibold">
+        <div className="container flex flex-wrap items-center justify-between mx-auto">
+          <p className="text-black">
+            <Link
+              to="#"
+              className="block py-2 pl-3 pr-4 text-black rounded md:p-0"
+              aria-current="page"
+            >
+              About Us
+            </Link>
+          </p>
+          <Link
+            to="#"
+            className="navbar-link block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
+            aria-current="page"
+          >
+            Products
+          </Link>
+          <Link to="navbar-link" className="flex items-center">
+            <img
+              src={LogoKoza}
+              className="h-6 mr-3 sm:h-9"
+              alt="Flowbite Logo"
+            />
+          </Link>
+          <Link
+            to="#"
+            className="navbar-link block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
+            aria-current="page"
+          >
+            Sustainability
+          </Link>
+          <Link
+            to="/contact"
+            className="navbar-link block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
+            aria-current="page"
+          >
+            Contact
+          </Link>
+        </div>
+      </nav>
+    </>
+  )
 }

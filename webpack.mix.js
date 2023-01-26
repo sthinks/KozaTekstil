@@ -1,5 +1,4 @@
-
-const mix = require('laravel-mix');
+const mix = require('laravel-mix')
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -11,32 +10,30 @@ const mix = require('laravel-mix');
  |
  */
 
- mix.options({
-  postCss: [
-      require('autoprefixer'),
-  ],
-});
+mix.options({
+  postCss: [require('autoprefixer')],
+})
 
-mix.setPublicPath('public');
+mix.setPublicPath('public')
 
-mix.webpackConfig({
-  resolve: {
+mix
+  .webpackConfig({
+    resolve: {
       extensions: ['.js', '.vue'],
       alias: {
-          '@': __dirname + 'resources'
-      }
-  },
-  output: {
+        '@': __dirname + 'resources',
+      },
+    },
+    output: {
       chunkFilename: 'js/chunks/[name].js',
-  },
-}).react();
-//tailwind
-// mix.js("resources/js/app.js", "public/js")
-//     .postCss("resources/css/app.css", "public/css", [
-//         require("tailwindcss"),
-//     ]);
-//tailwind
+    },
+  })
+  .react()
+
+mix
+  .js('resources/js/app.js', 'public/js')
+  .postCss('resources/css/app.css', 'public/css', [require('tailwindcss')])
 
 // used to run app using reactjs
-mix.js('resources/react-app/src/index.js', 'public/js/app.js').version();
-mix.copy('resources/react-app/public', 'public');
+mix.js('resources/react-app/src/index.js', 'public/js/app.js').version()
+mix.copy('resources/react-app/public', 'public')
