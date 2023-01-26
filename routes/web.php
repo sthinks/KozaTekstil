@@ -17,7 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::any('/{any}', function () {
+    return view('welcome');
+})->where('any', '^(?!api\/)[\/\w\.-]*');

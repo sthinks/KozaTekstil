@@ -25,6 +25,7 @@
         "web-vitals": "^1.0.1"
     },
     "dependencies": {
+        "formik": "^2.2.9",
         "react-bootstrap": "^2.7.0",
         "react-router-dom": "^6.7.0"
     }
