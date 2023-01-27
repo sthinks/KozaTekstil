@@ -1,50 +1,99 @@
-import React from 'react'
-import LogoKoza from '../../assets/header/KozaTekstil.png'
+import { Fragment } from 'react'
+import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
+import Logo from "../../assets/header/logo.png"
+
+const navigation = [
+  { name: 'About Us', href: '#', current: true },
+  { name: 'Products', href: '#', current: false },
+  { name: 'Sustainability', href: '#', current: false },
+  { name: 'Contact', href: '#', current: false },
+]
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
 export default function Header() {
   return (
-    <>
-      <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded  navbar-full font-semibold">
-        <div className="container flex flex-wrap items-center justify-between mx-auto">
-          <p className="text-black">
-            <Link
-              to="#"
-              className="block py-2 pl-3 pr-4 text-black rounded md:p-0"
-              aria-current="page"
-            >
-              About Us
-            </Link>
-          </p>
-          <Link
-            to="#"
-            className="navbar-link block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
-            aria-current="page"
-          >
-            Products
-          </Link>
-          <Link to="navbar-link" className="flex items-center">
-            <img
-              src={LogoKoza}
-              className="h-6 mr-3 sm:h-9"
-              alt="Flowbite Logo"
-            />
-          </Link>
-          <Link
-            to="#"
-            className="navbar-link block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
-            aria-current="page"
-          >
-            Sustainability
-          </Link>
-          <Link
-            to="/contact"
-            className="navbar-link block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
-            aria-current="page"
-          >
-            Contact
-          </Link>
-        </div>
-      </nav>
-    </>
+    <Disclosure as="nav" className="sm:bg-[#ffffff82] sm:fixed sm:top-0 z-50 w-full bg-[#004C96]">
+      {({ open }) => (
+        <>
+          <div className="mx-auto px-2 sm:px-6 lg:px-8">
+            <div className="relative flex sm:h-20 h-16 items-center justify-between">
+              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                {/* Mobile menu button*/}
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-white ring-2 ring-inset ring-white">
+                  <span className="sr-only">Open main menu</span>
+                  {open ? (
+                    <XMarkIcon className="block h-6 w-6 text-white" aria-hidden="true" />
+                  ) : (
+                    <Bars3Icon className="block h-6 w-6 text-white" aria-hidden="true" />
+                  )}
+                </Disclosure.Button>
+              </div>
+              <div className="flex items-center justify-center sm:items-stretch sm:justify-around text-[#191919] font-semibold w-full">
+                <div className="hidden sm:ml-6 sm:block w-full">
+                  <div className="flex justify-around items-center">
+                    <Link
+                      to="#"
+                    >
+                      About Us
+                    </Link>
+                    <Link
+                      to="#"
+                    >
+                      Products
+                    </Link>
+                    <div className="flex flex-shrink-0 items-center">
+                      <img
+                        className="block h-8 w-auto lg:hidden"
+                        src={Logo}
+                        alt="Your Company"
+                      />
+                      <img
+                        className="hidden h-8 w-auto lg:block"
+                        src={Logo}
+                        alt="Your Company"
+                      />
+                    </div>
+                    <Link
+                      to="#"
+                    >
+                      Sustainability
+                    </Link>
+                    <Link
+                      to="#"
+                    >
+                      Contact
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <Disclosure.Panel className="sm:hidden">
+            <div className="space-y-1 px-2 pt-2 pb-3">
+              {navigation.map((item) => (
+                <Disclosure.Button
+                  key={item.name}
+                  as="a"
+                  href={item.href}
+                  className={classNames(
+                    item.current ? 'bg-[#00000038] text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    'block px-3 py-2 rounded-md text-base font-medium'
+                  )}
+                  aria-current={item.current ? 'page' : undefined}
+                >
+                  {item.name}
+                </Disclosure.Button>
+              ))}
+            </div>
+          </Disclosure.Panel>
+        </>
+      )}
+    </Disclosure>
   )
 }

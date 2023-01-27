@@ -27,6 +27,7 @@ mix
     output: {
       chunkFilename: 'js/chunks/[name].js',
     },
+
   })
   .react()
 
@@ -37,3 +38,19 @@ mix
 // used to run app using reactjs
 mix.js('resources/react-app/src/index.js', 'public/js/app.js').version()
 mix.copy('resources/react-app/public', 'public')
+mix.extend("addWebpackLoaders", (webpackConfig, loaderRules) => {
+  loaderRules.forEach((loaderRule) => {
+    webpackConfig.module.rules.push(loaderRule);
+  });
+});
+
+mix.addWebpackLoaders([
+  {
+    test: /\.(mp4|svg|jpe?g|gif)$/,
+    use: [
+      {
+        loader: 'file-loader',
+      }
+    ]
+  }
+]);

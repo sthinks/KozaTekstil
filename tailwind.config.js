@@ -16,6 +16,20 @@ module.exports = {
       borderRadius: {
         '4xl': '50px',
       },
+      textColor: {
+        'brand': '#004C96'
+      }
+    },
+    fontFamily: {
+      grape: [
+        "Grape Nuts, cursive",
+        { fontFeatureSettings: '"cv11", "ss01"' },
+      ],
+      sans: [
+        "Lato, sans-serif",
+        { fontFeatureSettings: '"cv11", "ss01"' },
+      ],
+
     },
   },
   plugins: [],
