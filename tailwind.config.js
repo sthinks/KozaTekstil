@@ -15,6 +15,7 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '50px',
+        'form-error': '30px 30px 30px 0px',
       },
     },
   },
