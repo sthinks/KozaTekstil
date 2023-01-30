@@ -47,7 +47,7 @@ const Carousel = () => {
                 </div>
                 <img src={Slide1} className="w-full h-auto" />
             </SwiperSlide>
-        </Swiper >
+        </Swiper>
     )
 }
 

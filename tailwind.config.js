@@ -29,6 +29,10 @@ module.exports = {
         "Lato, sans-serif",
         { fontFeatureSettings: '"cv11", "ss01"' },
       ],
+      newyork: [
+        "newyork, sans-serif",
+        { fontFeatureSettings: '"cv11", "ss01"' },
+      ],
 
     },
   },
