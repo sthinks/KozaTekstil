@@ -5,6 +5,7 @@ import contactImage from '../../../assets/contact/contact-form-image.png'
 import { GiRotaryPhone } from 'react-icons/gi'
 import { MdEmail } from 'react-icons/md'
 import { ImBooks } from 'react-icons/im'
+
 function Form() {
   const [loading, setLoading] = useState(false)
   const formik = useFormik({

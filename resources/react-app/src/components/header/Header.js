@@ -18,7 +18,7 @@ export default function Header() {
   ]
 
   return (
-    <Disclosure as="nav" className="sm:bg-[#ffffff82] sm:fixed sm:top-0 z-50 w-full bg-[#004C96]">
+    <Disclosure as="nav" className={`${slug != '/' ? 'relative bg-white' : 'sm:bg-[#ffffff82] sm:fixed sm:top-0 z-50 w-full bg-[#004C96]'}`}>
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
@@ -37,42 +37,42 @@ export default function Header() {
               <div className="flex items-center justify-center sm:items-stretch sm:justify-around text-[#191919] font-semibold w-full">
                 <div className="hidden sm:ml-6 sm:block w-full">
                   <div className="flex justify-around items-center">
-                    <Link
-                      to="/about-us"
+                    <a
+                      href="/about-us"
                     >
                       About Us
-                    </Link>
-                    <Link
-                      to="/products"
+                    </a>
+                    <a
+                      href="/products"
                     >
                       Products
-                    </Link>
+                    </a>
                     <div className="flex flex-shrink-0 items-center">
-                      <Link to="/">
+                      <a href="/">
                         <img
                           className="block h-8 w-auto lg:hidden"
                           src={Logo}
                           alt="Your Company"
                         />
-                      </Link>
-                      <Link to="/">
+                      </a>
+                      <a href="/">
                         <img
                           className="hidden h-8 w-auto lg:block"
                           src={Logo}
                           alt="Your Company"
                         />
-                      </Link>
+                      </a>
                     </div>
-                    <Link
-                      to="/sustainability"
+                    <a
+                      href="/sustainability"
                     >
                       Sustainability
-                    </Link>
-                    <Link
-                      to="/contact"
+                    </a>
+                    <a
+                      href="/contact"
                     >
                       Contact
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
