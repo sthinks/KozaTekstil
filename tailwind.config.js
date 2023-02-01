@@ -18,6 +18,24 @@ module.exports = {
         '4xl': '50px',
         'form-error': '30px 30px 30px 0px',
       },
+      textColor: {
+        'brand': '#004C96'
+      }
+    },
+    fontFamily: {
+      grape: [
+        "Grape Nuts, cursive",
+        { fontFeatureSettings: '"cv11", "ss01"' },
+      ],
+      sans: [
+        "Lato, sans-serif",
+        { fontFeatureSettings: '"cv11", "ss01"' },
+      ],
+      newyork: [
+        "newyork, sans-serif",
+        { fontFeatureSettings: '"cv11", "ss01"' },
+      ],
+
     },
   },
   plugins: [],
