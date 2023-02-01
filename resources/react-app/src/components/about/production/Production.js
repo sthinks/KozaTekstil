@@ -6,23 +6,23 @@ import card3 from '../../../assets/aboutus/card-3.png'
 import thread from '../../../assets/aboutus/thread.png'
 function Production() {
   return (
-    <div className="flex flex-col mt-44">
-      <div className="container mx-auto  max-3xl:py-16">
+    <div className="flex flex-col mt-44 max-md:mt-4">
+      <div className="container mx-auto max-3xl:py-16">
         <div className="flex justify-center">
           <p className="font-extrabold text-4xl">PRODUCTION</p>
         </div>
       </div>
-      <div className="mt-14">
-        <div className="flex justify-center relative">
+      <div className="mt-14 max-md:mt-0">
+        <div className="flex justify-center relative items-center">
           <img className="w-full" src={kozaVideo} alt="" />
-          <p className="text-7xl absolute top-[35%] font-extrabold">
+          <p className="text-7xl absolute font-extrabold max-md:text-2xl">
             VİDEO ALANI
           </p>
         </div>
       </div>
 
-      <div className="container mx-auto mt-28">
-        <div className="justify-center items-center grid grid-cols-3 gap-7">
+      <div className="container mx-auto mt-28 max-md:mt-16">
+        <div className="justify-center items-center grid grid-cols-3 gap-7 max-md:grid-cols-1 max-md:grid-rows-3 max-md:mb-5">
           <div className="bg-white shadow shadow-slate-300">
             <div className="p-7">
               <img className="w-full" src={card1} alt="" />
@@ -57,8 +57,8 @@ function Production() {
       </div>
 
       <div className="mt-28 mb-28">
-        <div className="flex justify-center">
-          <img className="w-full" src={thread} alt="" />
+        <div className="flex justify-center max-md:h-[170px]">
+          <img className="w-full object-cover" src={thread} alt="" />
         </div>
       </div>
     </div>
