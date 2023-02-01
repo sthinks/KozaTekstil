@@ -10,8 +10,8 @@ const Footer = () => {
                         <div className='inline-block'>
                             <h4 className='text-brand text-2xl font-extrabold'>Follow Us</h4>
                             <div className='flex mt-5'>
-                                <FaInstagramSquare className='text-brand text-2xl' />
-                                <FaFacebookSquare className='text-brand text-2xl' />
+                                <FaInstagramSquare className='text-brand text-2xl max-md:mr-2' />
+                                <FaFacebookSquare className='text-brand text-2xl max-md:mr-2' />
                                 <FaLinkedin className='text-brand text-2xl' />
                             </div>
                         </div>

@@ -1,21 +1,22 @@
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Disclosure } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
 import Logo from "../../assets/header/logo.png"
-
-const navigation = [
-  { name: 'About Us', href: '#', current: true },
-  { name: 'Products', href: '#', current: false },
-  { name: 'Sustainability', href: '#', current: false },
-  { name: 'Contact', href: '#', current: false },
-]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Header() {
+  const slug = window.location.pathname;
+
+  const navigation = [
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Products', href: '/products' },
+    { name: 'Sustainability', href: '/sustainability' },
+    { name: 'Contact', href: '/contact' },
+  ]
+
   return (
     <Disclosure as="nav" className="sm:bg-[#ffffff82] sm:fixed sm:top-0 z-50 w-full bg-[#004C96]">
       {({ open }) => (
@@ -37,34 +38,38 @@ export default function Header() {
                 <div className="hidden sm:ml-6 sm:block w-full">
                   <div className="flex justify-around items-center">
                     <Link
-                      to="#"
+                      to="/about-us"
                     >
                       About Us
                     </Link>
                     <Link
-                      to="#"
+                      to="/products"
                     >
                       Products
                     </Link>
                     <div className="flex flex-shrink-0 items-center">
-                      <img
-                        className="block h-8 w-auto lg:hidden"
-                        src={Logo}
-                        alt="Your Company"
-                      />
-                      <img
-                        className="hidden h-8 w-auto lg:block"
-                        src={Logo}
-                        alt="Your Company"
-                      />
+                      <Link to="/">
+                        <img
+                          className="block h-8 w-auto lg:hidden"
+                          src={Logo}
+                          alt="Your Company"
+                        />
+                      </Link>
+                      <Link to="/">
+                        <img
+                          className="hidden h-8 w-auto lg:block"
+                          src={Logo}
+                          alt="Your Company"
+                        />
+                      </Link>
                     </div>
                     <Link
-                      to="#"
+                      to="/sustainability"
                     >
                       Sustainability
                     </Link>
                     <Link
-                      to="#"
+                      to="/contact"
                     >
                       Contact
                     </Link>
@@ -81,11 +86,7 @@ export default function Header() {
                   key={item.name}
                   as="a"
                   href={item.href}
-                  className={classNames(
-                    item.current ? 'bg-[#00000038] text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block px-3 py-2 rounded-md text-base font-medium'
-                  )}
-                  aria-current={item.current ? 'page' : undefined}
+                  className="block px-3 py-2 rounded-md text-white font-medium"
                 >
                   {item.name}
                 </Disclosure.Button>

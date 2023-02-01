@@ -13,8 +13,8 @@ const Products = () => {
         <div>
             <div className='relative flex items-center justify-center'>
                 <div className='bg-[#000] opacity-40 absolute h-full w-full left-0 top-0' />
-                <div className='absolute text-center'>
-                    <h1 className='font-bold text-5xl text-[#fff]'>PRODUCTS</h1>
+                <div className='absolute text-center max-md:px-4'>
+                    <h1 className='font-bold text-5xl text-[#fff] max-md:text-3xl max-md:mb-3'>PRODUCTS</h1>
                     <span className='text-[#fff]'>
                         KOZA supplies wide range of fabrics with different fibers and contents as per trends <br />
                         and customer needs. Fabric performances should meet the demands of modern life.
@@ -24,7 +24,7 @@ const Products = () => {
             </div>
             <div className='container mx-auto'>
                 <div className='py-10'>
-                    <div className='text-center'>
+                    <div className='text-center max-md:px-4 xl:px-10'>
                         <p className='text-[#444444]'>
                             With a 25.000 square meter facilities, a weaving
                             capacity of 20.000 mts, 50.000 mts of dyeing,
@@ -40,39 +40,51 @@ const Products = () => {
                             and create value for customers.
                         </p>
                     </div>
-                    <div className='flex flex-wrap mt-10 text-center'>
-                        <p className='flex-1'>
-                            %100
-                            <br />
-                            Viscose Fabrics
-                        </p>
-                        <p className='flex-1'>
-                            100%
-                            <br />
-                            Polyester Fabrics
-                        </p>
-                        <p className='flex-1'>
-                            Viscose/
-                            <br />
-                            Linen Blends
-                        </p>
-                        <p className='flex-1'>
-                            Cotton/
-                            <br />
-                            Linen Blends
-                        </p>
-                        <p className='flex-1'>
-                            Cotton/Polyester
-                            <br />
-                            Blends
-                        </p>
-                        <p className='flex-1'>
-                            PA and
-                            <br />
-                            Blends
-                        </p>
+                    <div className='grid grid-cols-6 max-md:grid-cols-3 max-md:grid-rows-2 max-md:gap-3 max-md:px-4 mt-10 text-center'>
+                        <div className='flex justify-center items-center max-md:border-[#004C96] max-md:border-b-2'>
+                            <p>
+                                %100
+                                <br />
+                                Viscose Fabrics
+                            </p>
+                        </div>
+                        <div className='flex justify-center items-center max-md:border-[#004C96] max-md:border-b-2'>
+                            <p>
+                                100%
+                                <br />
+                                Polyester Fabrics
+                            </p>
+                        </div>
+                        <div className='flex justify-center items-center max-md:border-[#004C96] max-md:border-b-2'>
+                            <p>
+                                Viscose/
+                                <br />
+                                Linen Blends
+                            </p>
+                        </div>
+                        <div className='flex justify-center items-center max-md:border-[#004C96] max-md:border-b-2'>
+                            <p>
+                                Cotton/
+                                <br />
+                                Linen Blends
+                            </p>
+                        </div>
+                        <div className='flex justify-center items-center max-md:border-[#004C96] max-md:border-b-2'>
+                            <p>
+                                Cotton/Polyester
+                                <br />
+                                Blends
+                            </p>
+                        </div>
+                        <div className='flex justify-center items-center max-md:border-[#004C96] max-md:border-b-2'>
+                            <p>
+                                PA and
+                                <br />
+                                Blends
+                            </p>
+                        </div>
                     </div>
-                    <div className='mt-10 max-w-screen-lg mx-auto'>
+                    <div className='mt-10 max-w-screen-lg mx-auto max-md:px-4'>
                         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 768: 3, 992: 3 }}>
                             <Masonry gutter='1rem'>
                                 <img src={Image01} alt="" className="w-full h-auto rounded-md hover:scale-105 transition-transform" />
@@ -84,7 +96,7 @@ const Products = () => {
                             </Masonry>
                         </ResponsiveMasonry>
                     </div>
-                    <div className='text-center mt-10'>
+                    <div className='text-center mt-10 max-md:px-4'>
                         <p className='text-[#444444]'>
                             KOZA supplies wide range of fabrics with different fibers and contents as per trends and customer needs.
                             Fabric performances should meet the demands of modern life.
