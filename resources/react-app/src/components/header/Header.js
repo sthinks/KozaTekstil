@@ -8,7 +8,7 @@ export default function Header() {
         <div className="container flex flex-wrap items-center justify-between mx-auto">
           <p className="text-black">
             <Link
-              to="#"
+              to="/aboutus"
               className="block py-2 pl-3 pr-4 text-black rounded md:p-0"
               aria-current="page"
             >

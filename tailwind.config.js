@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       screens: {
         '2lg': '1150px',
+        '3xl': '1600px',
       },
       boxShadow: {
         koza: '0px 4px 4px rgba(0, 0, 0, 0.04)',
