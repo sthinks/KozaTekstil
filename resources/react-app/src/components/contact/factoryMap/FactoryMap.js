@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { TfiSearch } from 'react-icons/tfi'
 function FactoryMap() {
   const [filter, setFilter] = useState(1)
 
@@ -48,7 +49,31 @@ function FactoryMap() {
           <div className="container mx-auto max-w-screen-lg ">
             <div className="flex justify-center relative flex-wrap max-sm:flex-col">
               <div className=" bg-white overflow-hidden shadow-lg mx-3 h-auto flex-1 mt-12 max-sm:mb-3 max-sm:mt-0">
-                <div>
+                <div className="relative">
+                  <div
+                    className={
+                      filter === 1
+                        ? 'absolute w-full h-full bg-[#004c9699] flex justify-center items-center flex-col hover:hidden '
+                        : 'absolute'
+                    }
+                  >
+                    <p
+                      className={
+                        filter === 1
+                          ? ' text-white font-normal text-lg'
+                          : 'hidden'
+                      }
+                    >
+                      Top For Location
+                    </p>
+                    <TfiSearch
+                      className={
+                        filter === 1
+                          ? 'text-7xl text-white scale-x-[-1] mt-2'
+                          : 'hidden'
+                      }
+                    />
+                  </div>
                   <iframe
                     title="1"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6090.877101629458!2d28.949911367062743!3d40.24378398376687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca138819aaee49%3A0x68b5e184316dbba!2zQmFsYXQsIFNhcsSxIENkLiBObzoxMiwgMTYxNDAgTWluYXJlbGnDp2F2dcWfIEJ0c28gT3NiL05pbMO8ZmVyL0J1cnNh!5e0!3m2!1str!2str!4v1674659351479!5m2!1str!2str"
@@ -66,7 +91,31 @@ function FactoryMap() {
                 </div>
               </div>
               <div className=" bg-white overflow-hidden shadow-lg mx-3 h-auto flex-1 mt-12 max-sm:mb-3 max-sm:mt-0">
-                <div>
+                <div className="relative">
+                  <div
+                    className={
+                      filter === 2
+                        ? 'absolute w-full h-full bg-[#004c9699] flex justify-center items-center flex-col hover:hidden '
+                        : 'absolute'
+                    }
+                  >
+                    <p
+                      className={
+                        filter === 2
+                          ? ' text-white font-normal text-lg'
+                          : 'hidden'
+                      }
+                    >
+                      Top For Location
+                    </p>
+                    <TfiSearch
+                      className={
+                        filter === 2
+                          ? 'text-7xl text-white scale-x-[-1] mt-2'
+                          : 'hidden'
+                      }
+                    />
+                  </div>
                   <iframe
                     title="2"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3044.146366630196!2d29.054544976681903!3d40.27249874397054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca40051931fdcd%3A0x6612f7ecf173d622!2s%C4%B0stanbul%20Cd%20No%3A582%2C%2016245%20Ala%C5%9Far%20Osb%2FOsmangazi%2FBursa!5e0!3m2!1str!2str!4v1674659387211!5m2!1str!2str"
@@ -84,7 +133,31 @@ function FactoryMap() {
                 </div>
               </div>
               <div className=" bg-white overflow-hidden shadow-lg mx-3 h-auto flex-1 mt-12 max-sm:mb-3 max-sm:mt-0">
-                <div>
+                <div className="relative">
+                  <div
+                    className={
+                      filter === 3
+                        ? 'absolute w-full h-full bg-[#004c9699] flex justify-center items-center flex-col hover:hidden '
+                        : 'absolute'
+                    }
+                  >
+                    <p
+                      className={
+                        filter === 3
+                          ? ' text-white font-normal text-lg'
+                          : 'hidden'
+                      }
+                    >
+                      Top For Location
+                    </p>
+                    <TfiSearch
+                      className={
+                        filter === 3
+                          ? 'text-7xl text-white scale-x-[-1] mt-2'
+                          : 'hidden'
+                      }
+                    />
+                  </div>
                   <iframe
                     title="3"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2129.0748848561734!2d28.908833931737774!3d41.0041047304288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cabba88697dfc3%3A0xbb13c5660d9943f1!2sTelsiz%2C%20Seyit%20Nizam%20Cd.%20No%3A166%2C%2034020%20Zeytinburnu%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1674659419656!5m2!1str!2str"

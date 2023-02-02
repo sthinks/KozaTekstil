@@ -1,14 +1,14 @@
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
-import Logo from "../../assets/header/logo.png"
+import Logo from '../../assets/header/logo.png'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Header() {
-  const slug = window.location.pathname;
+  const slug = window.location.pathname
 
   const navigation = [
     { name: 'About Us', href: '/about-us' },
@@ -18,7 +18,14 @@ export default function Header() {
   ]
 
   return (
-    <Disclosure as="nav" className={`${slug != '/' ? 'relative bg-white' : 'sm:bg-[#ffffff82] sm:fixed sm:top-0 z-50 w-full bg-[#004C96]'}`}>
+    <Disclosure
+      as="nav"
+      className={`${
+        slug != '/'
+          ? 'relative bg-white'
+          : 'sm:bg-[#ffffff82] sm:fixed sm:top-0 z-50 w-full bg-[#004C96]'
+      }`}
+    >
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
@@ -28,25 +35,23 @@ export default function Header() {
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-white ring-2 ring-inset ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
-                    <XMarkIcon className="block h-6 w-6 text-white" aria-hidden="true" />
+                    <XMarkIcon
+                      className="block h-6 w-6 text-white"
+                      aria-hidden="true"
+                    />
                   ) : (
-                    <Bars3Icon className="block h-6 w-6 text-white" aria-hidden="true" />
+                    <Bars3Icon
+                      className="block h-6 w-6 text-white"
+                      aria-hidden="true"
+                    />
                   )}
                 </Disclosure.Button>
               </div>
               <div className="flex items-center justify-center sm:items-stretch sm:justify-around text-[#191919] font-semibold w-full">
                 <div className="hidden sm:ml-6 sm:block w-full">
                   <div className="flex justify-around items-center">
-                    <a
-                      href="/about-us"
-                    >
-                      About Us
-                    </a>
-                    <a
-                      href="/products"
-                    >
-                      Products
-                    </a>
+                    <a href="/about-us">About Us</a>
+                    <a href="/products">Products</a>
                     <div className="flex flex-shrink-0 items-center">
                       <a href="/">
                         <img
@@ -63,16 +68,8 @@ export default function Header() {
                         />
                       </a>
                     </div>
-                    <a
-                      href="/sustainability"
-                    >
-                      Sustainability
-                    </a>
-                    <a
-                      href="/contact"
-                    >
-                      Contact
-                    </a>
+                    <a href="/sustainability">Sustainability</a>
+                    <a href="/contact">Contact</a>
                   </div>
                 </div>
               </div>
