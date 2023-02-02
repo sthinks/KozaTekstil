@@ -18,46 +18,39 @@ class ContactController extends Controller
     {
         $data = $request->all();
         $validation = Validator::make($data, [
-            "name" => ["required", "string"],
-            "surname" => ["required", "string"],
-            "message" => ["required", "string"]
+            'name' => ['required', 'string'],
+            'surname' => ['required', 'string'],
+            'message' => ['required', 'string'],
         ]);
 
         if ($validation->fails()) {
             return response()->json([
-                "message" => $validation->errors(),
-                "statusCode" => http_response_code()
+                'message' => $validation->errors(),
+                'statusCode' => http_response_code(),
             ]);
         } else {
             $added = Contact::Create([
-                "name" => $data["name"],
-                "surname" => $data["surname"],
-                "message" => $data["message"]
+                'name' => $data['name'],
+                'surname' => $data['surname'],
+                'message' => $data['message'],
             ]);
             if ($added) {
                 $details = [
-                    "name" => $data["name"],
-                    "surname" => $data["surname"],
-                    "message" => $data["message"]
+                    'name' => $data['name'],
+                    'surname' => $data['surname'],
+                    'message' => $data['message'],
                 ];
-                $sendToMail=[
-                    "rkapucuoglu@socialthinks.com"
-                ];
-                \Mail::to($sendToMail)->send(
-                    new \App\Mail\ContactMail($details));
                 return response()->json([
-                    "message" => "Database kaydı başarılı",
-                    "statusCode" => http_response_code()
+                    'message' => 'Success',
+                    'statusCode' => http_response_code(),
                 ]);
-            }
-            else{
+            } else {
                 return response()->json([
-                    "message" => "Database kaydı gerçekleşemedi!",
-                    "statusCode" => http_response_code()
+                    'message' => 'Unsuccess',
+                    'statusCode' => http_response_code(),
                 ]);
             }
         }
-
     }
 
     /**
