@@ -9,10 +9,15 @@ const fetchHomeSlider = async () => {
   const result = await axiosInstance.get('get-slider')
   return result
 }
+const fetchFairsSlider = async () => {
+  const result = await axiosInstance.get('upcoming-fairs')
+  return result
+}
 
 const exportFunction = {
   contactPost,
   fetchHomeSlider,
+  fetchFairsSlider,
 }
 
 export default exportFunction
