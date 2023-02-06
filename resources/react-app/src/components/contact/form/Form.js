@@ -5,9 +5,15 @@ import contactImage from '../../../assets/contact/contact-form-image.png'
 import { GiRotaryPhone } from 'react-icons/gi'
 import { MdEmail } from 'react-icons/md'
 import { ImBooks } from 'react-icons/im'
+import allService from '../../../service/services'
+import useService from '../../../service/useService'
+import FormModal from '../formModal/FormModal'
 
 function Form() {
   const [loading, setLoading] = useState(false)
+  const [modal, setModal] = useState(false)
+  const [submitValue, setSubmitValue] = useState(true)
+
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -25,12 +31,27 @@ function Form() {
         'Zorunlu alan',
       ),
     }),
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2))
+    onSubmit: async (values, { resetForm }) => {
+      setLoading(true)
+      const value = JSON.stringify(values, null, 2)
+      const result = await allService.contactPost(value)
+      if (result?.data.message === 'Success') {
+        setSubmitValue(true)
+        resetForm()
+        setModal(true)
+        setLoading(false)
+      } else {
+        setSubmitValue(false)
+        resetForm()
+        setModal(true)
+        setLoading(false)
+      }
     },
   })
   return (
-    <div className="flex justify-center mt-24 mb-24">
+    <div className="flex justify-center mt-24 mb-24 relative">
+      {modal && <FormModal setModal={setModal} submitValue={submitValue} />}
+
       <div className="container">
         <div className="relative">
           <img
@@ -115,7 +136,7 @@ function Form() {
 
                     <div className="flex justify-end w-full px-10 max-sm:px-1">
                       <button
-                        className="w-2/6 h-12 bg-[#F2F1F1] rounded-4xl hover:bg-[#E9E9E9] hover:shadow-sm"
+                        className="w-2/6 h-12 bg-[#F2F1F1] rounded-4xl hover:bg-[#E9E9E9] hover:shadow-sm flex justify-center items-center"
                         type="submit"
                       >
                         {loading ? (
@@ -136,7 +157,7 @@ function Form() {
                             />
                           </svg>
                         ) : (
-                          'Send'
+                          <p>Send</p>
                         )}
                       </button>
                     </div>
