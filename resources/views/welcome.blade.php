@@ -6,7 +6,7 @@
     <title>Laravel Package Tutorial</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    <link href="{{ asset('../css/app.css') }}" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
 </head>
 <body>
 <div id="root"></div>

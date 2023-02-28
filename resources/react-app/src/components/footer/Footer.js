@@ -20,41 +20,44 @@ const Footer = () => {
                         <h4 className='text-brand text-2xl font-extrabold'>Company</h4>
                         <ul className='text-brand'>
                             <li className='py-2'>
-                                <p>About Us</p>
+                                <a href='/about-us'>About Us</a>
                             </li>
                             <li className='py-2'>
-                                <p>Our Goals & Values</p>
+                                <a href='/about-us'>Our Goals & Values</a>
                             </li>
                             <li className='py-2'>
-                                <p>Production</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className='flex-1 max-sm:mt-4'>
-                        <h4 className='text-brand text-2xl font-extrabold'>Company</h4>
-                        <ul className='text-brand'>
-                            <li className='py-2'>
-                                <p>About Us</p>
-                            </li>
-                            <li className='py-2'>
-                                <p>Our Goals & Values</p>
-                            </li>
-                            <li className='py-2'>
-                                <p>Production</p>
+                                <a href='/about-us'>Production</a>
                             </li>
                         </ul>
                     </div>
                     <div className='flex-1 max-sm:mt-4'>
-                        <h4 className='text-brand text-2xl font-extrabold'>Company</h4>
+                        <h4 className='text-brand text-2xl font-extrabold'>Products</h4>
                         <ul className='text-brand'>
                             <li className='py-2'>
-                                <p>About Us</p>
+                                <a href='/products'>Viscose Fabrics</a>
                             </li>
                             <li className='py-2'>
-                                <p>Our Goals & Values</p>
+                                <a href='/products'>Polyester Fabrics</a>
                             </li>
                             <li className='py-2'>
-                                <p>Production</p>
+                                <a href='/products'>Viscose/Linen Blends</a>
+                            </li>
+                            <li className='py-2'>
+                                <a href='/products'>Cotton/Linen Blends</a>
+                            </li>
+                            <li className='py-2'>
+                                <a href='/products'>Cotton/Polyester Blends</a>
+                            </li>
+                            <li className='py-2'>
+                                <a href='/products'>PA and Blends</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className='flex-1 max-sm:mt-4'>
+                        <h4 className='text-brand text-2xl font-extrabold'>Contact Us</h4>
+                        <ul className='text-brand'>
+                            <li className='py-2'>
+                                <a href='/contact'>Get In Touch</a>
                             </li>
                         </ul>
                     </div>

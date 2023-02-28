@@ -1,9 +1,11 @@
 import React from 'react'
-import kozaVideo from '../../../assets/aboutus/koza_video.png'
 import card1 from '../../../assets/aboutus/card-1.png'
 import card2 from '../../../assets/aboutus/card-2.png'
 import card3 from '../../../assets/aboutus/card-3.png'
 import thread from '../../../assets/aboutus/thread.png'
+import Bg from '../../../assets/kapak.png'
+import ReactPlayer from 'react-player'
+
 function Production() {
   return (
     <div className="flex flex-col mt-44 max-md:mt-4">
@@ -14,10 +16,14 @@ function Production() {
       </div>
       <div className="mt-14 max-md:mt-0">
         <div className="flex justify-center relative items-center">
-          <img className="w-full" src={kozaVideo} alt="" />
-          <p className="text-7xl absolute font-extrabold max-md:text-2xl">
-            VİDEO ALANI
-          </p>
+          <ReactPlayer
+            url="https://youtu.be/Vxgjuxi28Lw"
+            playing={true}
+            loop={true}
+            light={<img src={Bg} className="w-full h-[800px]" alt='Thumbnail' />}
+            width="100%"
+            height="800px"
+          />
         </div>
       </div>
 

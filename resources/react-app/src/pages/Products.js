@@ -40,7 +40,7 @@ const Products = () => {
                             and create value for customers.
                         </p>
                     </div>
-                    <div className='grid grid-cols-6 max-md:grid-cols-3 max-md:grid-rows-2 max-md:gap-3 max-md:px-4 mt-10 text-center'>
+                    <div className='grid grid-cols-9 max-md:grid-cols-3 max-md:grid-rows-2 max-md:gap-3 max-md:px-4 mt-10 text-center'>
                         <div className='flex justify-center items-center max-md:border-[#004C96] max-md:border-b-2'>
                             <p>
                                 %100
@@ -81,6 +81,25 @@ const Products = () => {
                                 PA and
                                 <br />
                                 Blends
+                            </p>
+                        </div>
+                        <div className='flex justify-center items-center max-md:border-[#004C96] max-md:border-b-2'>
+                            <p>
+                                PA and
+                                <br />
+                                Blends
+                            </p>
+                        </div>
+                        <div className='flex justify-center items-center max-md:border-[#004C96] max-md:border-b-2'>
+                            <p>
+                                Polyester/
+                                <br />
+                                Viscose
+                            </p>
+                        </div>
+                        <div className='flex justify-center items-center max-md:border-[#004C96] max-md:border-b-2'>
+                            <p>
+                                Jakarts
                             </p>
                         </div>
                     </div>

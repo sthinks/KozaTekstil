@@ -1,11 +1,7 @@
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 import Logo from '../../assets/header/logo.png'
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
 
 export default function Header() {
   const slug = window.location.pathname
@@ -17,20 +13,33 @@ export default function Header() {
     { name: 'Contact', href: '/contact' },
   ]
 
+  // Sticky Menu Area
+  useEffect(() => {
+    window.addEventListener('scroll', isSticky);
+    return () => {
+      window.removeEventListener('scroll', isSticky);
+    };
+  });
+
+  const isSticky = (e) => {
+    const header = document.querySelector('.header-section');
+    const scrollTop = window.scrollY;
+    scrollTop >= 250 ? header.classList.add('md:bg-white') : header.classList.remove('md:bg-white');
+  };
+
   return (
     <Disclosure
       as="nav"
-      className={`${
-        slug != '/'
-          ? 'relative bg-white'
-          : 'sm:bg-[#ffffff82] sm:fixed sm:top-0 z-50 w-full bg-[#004C96]'
-      }`}
+      className={`${slug != '/'
+        ? 'relative bg-white'
+        : 'sm:bg-[#ffffff82] sm:fixed sm:top-0 z-50 w-full bg-[#004C96] header-section'
+        }`}
     >
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex sm:h-20 h-16 items-center justify-between">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <div className="absolute inset-y-0 left-2 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-white ring-2 ring-inset ring-white">
                   <span className="sr-only">Open main menu</span>
@@ -88,6 +97,13 @@ export default function Header() {
                   {item.name}
                 </Disclosure.Button>
               ))}
+            </div>
+            <div className='block px-3 py-2'>
+              <img
+                className="block h-auto w-auto"
+                src={Logo}
+                alt="Your Company"
+              />
             </div>
           </Disclosure.Panel>
         </>

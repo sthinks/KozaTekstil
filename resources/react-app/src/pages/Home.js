@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Carousel from '../components/carousel/Carousel'
 import Banner from '../assets/home/banner.png'
 import NewsCarousel from '../components/news-carousel/NewsCarousel'
+import { useService } from '../service/useService'
+import allService from '../service/services'
 
 const Home = () => {
+  const { data, isLoading, refetch } = useService('get-slider', () =>
+    allService.fetchHomeSlider(),
+  )
+
   return (
     <div>
-      <Carousel />
+      <Carousel data={data} />
       <div className="flex items-center justify-center py-8">
         <h2 className="uppercase font-bold text-2xl text-center">
           we are weaving the future with passion
@@ -34,7 +40,7 @@ const Home = () => {
         <h2 className="uppercase font-bold text-2xl">fairs</h2>
       </div>
       <div className="bg-[#F5F5F5] text-center py-16 lg:h-[500px] md:mb-64 max-md:mb-12">
-        <h2 className="font-newyork text-4xl">UPCOMING FAIRS</h2>
+        <h2 className="font-newyork text-4xl">FAIRS</h2>
         <div className="container mx-auto pb-5 max-sm:px-10 max-md:px-12 max-2xl:px-14 2xl:px-14">
           <NewsCarousel />
         </div>
